@@ -8,8 +8,6 @@ const PORT = 3000;
 
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
 
-
-
 const contractAddress = "0x779877A7B0D9E8603169DdbD7836e478b4624789";
 
 const abi = [
@@ -22,7 +20,7 @@ const contract = new ethers.Contract(contractAddress, abi, provider);
 
 app.get("/rajeevApiTest", async (req, res) => {
   try {
-    // Fetch contract data
+   
     const tokenName = await contract.name();
     const totalSupply = await contract.totalSupply();
     const decimals = await contract.decimals();
